@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
 
     entry: {
@@ -16,15 +17,20 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "自动生成的html文件"
         }),
+        new ExtractTextPlugin({ // 设置插件选项
+            filename: "styles.css",
+            disable: process.env.NODE_ENV == "developement"?true: false
+        })
     ],
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
+                use: ExtractTextPlugin.extract({ // 剥离文件
+                    fallback: "style-loader",
+                    use: "css-loader"
+                }),
+                include: path.resolve(__dirname, "src")
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,

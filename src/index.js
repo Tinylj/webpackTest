@@ -19,3 +19,9 @@ if(module.hot) { // 监听模块热更新
         printMe();
     })
 }
+
+if(process.env.NODE_ENV != 'production') {
+    console.log("我不是production模式");
+}else {
+    console.log("我是production模式")
+}

@@ -28,7 +28,14 @@ module.exports = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({ // 剥离文件
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use:[
+                        {
+                            loader: 'css-loader',
+                            options:{
+                                minimize: true //css压缩
+                            }
+                        }
+                    ]
                 }),
                 include: path.resolve(__dirname, "src")
             },

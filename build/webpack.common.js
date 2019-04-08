@@ -10,7 +10,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, "./dist")
+        path: path.resolve(__dirname, "../dist")
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -37,7 +37,7 @@ module.exports = {
                         }
                     ]
                 }),
-                include: path.resolve(__dirname, "src")
+                include: path.resolve(__dirname, "../src")
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,

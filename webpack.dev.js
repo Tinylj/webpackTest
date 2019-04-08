@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: '../dist',
+        contentBase: './dist',
         hot: true // 开启热替换
     }, // 作用是告诉webpack在localhost:8080上观察dist目录下面的内容
     plugins: [

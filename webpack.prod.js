@@ -13,6 +13,6 @@ module.exports = merge(common, {
         }),
     ],
     output: {
-        publicPath: '/Test' // 指定发布路径
+        publicPath: '' // 指定发布路径
     }
 });

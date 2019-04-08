@@ -25,7 +25,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.css$/, //不同版本的css-loader效果不一样
                 use: ExtractTextPlugin.extract({ // 剥离文件
                     fallback: "style-loader",
                     use:[

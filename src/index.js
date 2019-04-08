@@ -1,4 +1,5 @@
 import './component/lh-css.css'
+import './component/test.css'//引用多个css
 import '../static/img/1.png'
 import printMe from './component/print.js';
 

@@ -1,4 +1,4 @@
-import './component/lh-css.css'
+// import './component/lh-css.css'
 import '../static/img/1.png'
 import printMe from './component/print.js';
 
